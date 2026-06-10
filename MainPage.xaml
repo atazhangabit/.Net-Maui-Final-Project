@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiFinalProject.MainPage">
+
+    <VerticalStackLayout Padding="30" Spacing="18">
+
+        <Label Text="SchoolApp Final"
+               FontSize="30"
+               HorizontalOptions="Center" />
+
+        <Label Text="Student name:"
+               FontSize="18" />
+
+        <Entry Text="{Binding Name, Mode=TwoWay}"
+               Placeholder="Type your name" />
+
+        <Label Text="{Binding WelcomeText}"
+               FontSize="26"
+               HorizontalOptions="Center" />
+
+        <Label Text="{Binding City}"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <Button Text="Open students"
+                Clicked="OpenStudents_Clicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiFinalProject.StudentsPage">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+
+        <Label Text="Students"
+               FontSize="28"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="NameEntry"
+               Placeholder="Student name" />
+
+        <Entry x:Name="CityEntry"
+               Placeholder="City" />
+
+        <Button Text="Add Student"
+                Clicked="AddStudent_Clicked" />
+
+        <CollectionView x:Name="StudentsList"
+                        ItemsSource="{Binding Students}"
+                        SelectionMode="Single"
+                        SelectionChanged="StudentsList_SelectionChanged">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="10">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}"
+                                   FontSize="20" />
+                            <Label Text="{Binding City}"
+                                   FontSize="14" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
